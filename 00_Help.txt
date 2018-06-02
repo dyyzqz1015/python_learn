@@ -1,0 +1,117 @@
+1.设置PyCharm创建文件时自动添加头文件
+找到该路径并添加以下信息
+
+File->settings->Editor->File and Code Templates->Python Script 
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : ${DATE} ${TIME}
+# @Author  : Aries
+# @Site    : ${SITE}
+# @File    : ${NAME}.py
+# @Software: ${PRODUCT_NAME}
+
+
+可用的预定义文件模板变量为：
+
+$ {PROJECT_NAME} - 当前项目的名称。
+
+$ {NAME} - 在文件创建过程中在“新建文件”对话框中指定的新文件的名称。
+
+$ {USER} - 当前用户的登录名。
+
+$ {DATE} - 当前的系统日期。
+
+$ {TIME} - 当前系统时间。
+
+$ {YEAR} - 今年。
+
+$ {MONTH} - 当月。
+
+$ {DAY} - 当月的当天。
+
+$ {HOUR} - 目前的小时。
+
+$ {MINUTE} - 当前分钟。
+
+$ {PRODUCT_NAME} - 将在其中创建文件的IDE的名称。
+
+$ {MONTH_NAME_SHORT} - 月份名称的前3个字母。 示例：1月，2月等
+
+$ {MONTH_NAME_FULL} - 一个月的全名。 示例：1月，2月等
+
+2.如何把界面的东西转化为变量引入到类里面
+	#self.btn = QPushButton('Start', self)  等同于self.btn
+
+        # lcd = QLCDNumber(self)    等同于lcd=self.lcdNumber
+        # sld = QSlider(Qt.Horizontal, self)  等同于sld=self.horizontalSlider
+        lcd=self.lcdNumber
+	sld=self.horizontalSlider
+        sld.valueChanged.connect(lcd.display)
+
+3.如何设计菜单？
+
+4.Qt creator全屏之后如何退出全屏
+	ctrl + shift + F11，
+
+5.如何设置下拉列表
+
+	b=self.comboBox.addItems(['1','2','3'])
+
+
+6.下拉选择，如何关联到其它地方进行引用
+        comBox.activated[str].connect(self.onActivated)     #将选择后的内容连接到Label
+
+    def onActivated(self,text):
+        lb=self.label       #关联界面的label
+        le=self.lineEdit
+
+        lb.setText(text)        #将选择点击后的内容显示到label
+        lb.adjustSize()         #自动调整显示的宽度
+
+        le.setText(text)
+
+9.为什么要用def里为什么要用text? 难道点击的内容就可以放到这里在吗？
+
+8.如何获取单行输入框内的内容，此时作为一个变量，对外输出
+	a=self.lineEdit.text()  
+9.如何写入单行的数据，接受外部的输入，此时作为对内的输入
+	a=self.lineEdit.setText('123')  # 写入单行的值
+
+10.列表解析法
+
+	1
+	语法：[ <do something> for value in list]
+	例子：
+	x=[5,10,15,20,25]
+	y=[n/5 for n in x]
+
+	In [2]: x=[5,10,15,20,25]
+
+	In [3]: y=[]
+
+	In [4]: y=[n/5 for n in x]
+
+	In [5]: y
+	Out[5]: [1.0, 2.0, 3.0, 4.0, 5.0]
+11.用NP读取数据
+	np.fromfile("salaries.txt", dtype=int, sep=",")
+12.如何读取的是文字而不是数据该怎么办呢？
+	np.genfromtxt("names.txt", dtype='str', delimiter=",")
+	该np.fromfile（）函数不与文字工作这么好，所以我使用的genfromtxt功能。它与之前的功能类似。
+
+13.文件名与标准库一致会出问题，调出来会报错
+
+14.如何在直方图的顶端显示值？
+
+15.如何读到Pandas表头的值 
+data=pd.read_csv('./data/hubble_data.csv')
+print(data.head(0))
+
+16.如何在读取一个没有表头的数据，增加上表头
+
+	hear=['dist','rec_vel']
+	data_noheader=pd.read_csv('./data/hubble_data_no_headers.csv',names=hear)
+
+
+
