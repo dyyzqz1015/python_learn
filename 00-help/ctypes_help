@@ -1,0 +1,4 @@
+01.restype和argtypes
+
+restype主要是定函数的类型
+argtypes主要是定参数类型
