@@ -1,0 +1,7 @@
+LIBRARY hello
+
+EXPORTS
+print_array
+add_one
+sum
+greet

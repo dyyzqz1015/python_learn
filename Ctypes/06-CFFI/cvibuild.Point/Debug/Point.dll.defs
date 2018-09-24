@@ -1,0 +1,15 @@
+LIBRARY Point
+
+EXPORTS
+getAnEnumValue
+area
+add_int_array
+add_float_ref
+add_int
+add_float
+get_default_point
+get_point_float
+get_point
+move_point_by_ref
+move_point
+show_point

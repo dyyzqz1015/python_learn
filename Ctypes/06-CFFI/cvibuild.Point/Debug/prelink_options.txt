@@ -1,0 +1,6 @@
+-inrc e:\01-python\Ctypes\06-CFFI\cvibuild.Point\Debug\resources.in.rc
+-outrc e:\01-python\Ctypes\06-CFFI\cvibuild.Point\Debug\resources.out.rc
+-inhdef e:\01-python\Ctypes\06-CFFI\cvibuild.Point\Debug\Point.h.hdefs
+-outdef e:\01-python\Ctypes\06-CFFI\cvibuild.Point\Debug\Point.dll.defs
+-indefprot e:\01-python\Ctypes\06-CFFI\cvibuild.Point\Debug\Point.obj.cvidefprots
+-dllName Point.dll

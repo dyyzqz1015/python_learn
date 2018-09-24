@@ -1,0 +1,6 @@
+-inrc e:\01-python\Ctypes\05-hello\cvibuild.hello\Debug\resources.in.rc
+-outrc e:\01-python\Ctypes\05-hello\cvibuild.hello\Debug\resources.out.rc
+-inhdef e:\01-python\Ctypes\05-hello\cvibuild.hello\Debug\hello.h.hdefs
+-outdef e:\01-python\Ctypes\05-hello\cvibuild.hello\Debug\hello.dll.defs
+-indefprot e:\01-python\Ctypes\05-hello\cvibuild.hello\Debug\hello.obj.cvidefprots
+-dllName hello.dll

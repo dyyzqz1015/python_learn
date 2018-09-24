@@ -1,0 +1,1 @@
+-force-include-file "hello.c";"e:\01-python\Ctypes\05-hello\hello.c" -force-include-file "hello.h";"e:\01-python\Ctypes\05-hello\hello.h" 

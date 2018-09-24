@@ -1,0 +1,16 @@
+[greet]
+Class="Function"
+Prototype="const char *greet() __declspec(dllexport);"
+
+[sum]
+Class="Function"
+Prototype="int sum(int a, int b) __declspec(dllexport);"
+
+[add_one]
+Class="Function"
+Prototype="int add_one(int i) __declspec(dllexport);"
+
+[print_array]
+Class="Function"
+Prototype="void print_array(double *array, int N) __declspec(dllexport);"
+

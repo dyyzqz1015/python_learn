@@ -1,0 +1,56 @@
+CCFLAGS = -g ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2015\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2015\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2015\\bin"
+	"c:\\ProgramData\\National Instruments\\CVI2015\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\Bin"
+	;
+include Jamfile_instr ;
+LOCATE on "Point.c" = "e:\\01-python\\Ctypes\\06-CFFI" ;
+LOCATE on "Point.h" = "e:\\01-python\\Ctypes\\06-CFFI" ;
+Object "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj" : "e:\\01-python\\Ctypes\\06-CFFI\\Point.c" ;
+FILENUM on "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj" = 1 ;
+DEFPROTS on "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj" = "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj.cvidefprots" ;
+OUTFILE on "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj" = "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj.out" ;
+PrjObjects += "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.obj" ;
+Object "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.h.hdefs" : "e:\\01-python\\Ctypes\\06-CFFI\\Point.h" ;
+FILENUM on "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.h.hdefs" = 2 ;
+OUTFILE on "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.h.hdefs" = "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.h.hdefs.out" ;
+PreLinkInputs += "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.in.rc" ;
+PreLinkInputs += $(PrjObjects) $(InstrObjects) ;
+PreLinkOutputs += "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.out.rc" ;
+PreLinkOutputs += "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll.defs" ;
+PreLink $(PreLinkOutputs) : $(PreLinkInputs) ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll.defs" ;
+Object "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.res" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.out.rc" ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.res" : $(PreLinkOutputs) ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.res" "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.out.rc" : $(PrjObjects) $(InstrObjects) ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.res" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\manifest.xml" ;
+MainFromObjects "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" : $(PrjObjects) $(InstrObjects) ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\link_options.txt" ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\dependencies.lnk.in" ;
+Depends "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\resources.res" ;
+Depends all : "e:\\01-python\\Ctypes\\06-CFFI\\cvibuild.Point\\Debug\\Point.dll" ;

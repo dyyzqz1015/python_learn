@@ -1,0 +1,1 @@
+-force-include-file "Point.c";"e:\01-python\Ctypes\06-CFFI\Point.c" -force-include-file "Point.h";"e:\01-python\Ctypes\06-CFFI\Point.h" 

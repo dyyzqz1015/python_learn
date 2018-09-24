@@ -1,0 +1,56 @@
+
+
+
+
+[show_point]
+Class="Function"
+Prototype="void show_point(Point point) __declspec(dllexport);"
+
+[move_point]
+Class="Function"
+Prototype="void move_point(Point point) __declspec(dllexport);"
+
+[move_point_by_ref]
+Class="Function"
+Prototype="void move_point_by_ref(Point *point) __declspec(dllexport);"
+
+[get_point]
+Class="Function"
+Prototype="Point get_point(int x, int y) __declspec(dllexport);"
+
+[get_point_float]
+Class="Function"
+Prototype="Point_float get_point_float(float x, float y) __declspec(dllexport);"
+
+[get_default_point]
+Class="Function"
+Prototype="Point get_default_point() __declspec(dllexport);"
+
+[add_float]
+Class="Function"
+Prototype="float add_float(float a, float b) __declspec(dllexport);"
+
+[add_int]
+Class="Function"
+Prototype="int add_int(int a, int b) __declspec(dllexport);"
+
+[add_float_ref]
+Class="Function"
+Prototype="int add_float_ref(float *a, float *b, float *c) __declspec(dllexport);"
+
+[add_int_array]
+Class="Function"
+Prototype="int add_int_array(int *a, int *b, int *c, int n) __declspec(dllexport);"
+
+
+
+[area]
+Class="Function"
+Prototype="float area(struct _rect rect) __declspec(dllexport);"
+
+
+
+[getAnEnumValue]
+Class="Function"
+Prototype="int getAnEnumValue(MyEnum anEnum) __declspec(dllexport);"
+
