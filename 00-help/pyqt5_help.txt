@@ -1,0 +1,83 @@
+1.QCoreApplication.instance(),这个方法怎么使用，是什么意思
+
+2.如何设置按键的标题
+btn=QPushButton("Hello,PyQt5")
+3.如何设置显示的位置
+btn.move(50,60)
+4.如何设置按键大小
+btn.resize(400,200)
+5.如果把界面显示出来
+btn.show()
+6.如何让界面循环显示
+sys.exit(app.exec_())
+
+7.如何输出帮助文件-sys.stdout
+sys.stdout 输出重定向，就是将内容输到文件中，而print实际上
+也调用这个，只是默认输出到控制台
+sys.sdtin 输入，input是调用这个
+sys.stdout=open(r'E:\QPushButton.txt','w')  #设置文件名，采用写入方式
+help(QPushButton)       #指定文件
+sys.stdout.close()      #关闭操作
+
+8.在使用sys.stdout是必须先定义一个变量做缓存，然后使用完了
+再回来控制台，要不然print将会报错-ValueError: I/O operation on closed file.
+
+9.如何设置软件窗口的标题
+window.setWindowTitle("hello PyQt5")
+
+10.如何导入ui的文件
+import sys
+from PyQt5.QtWidgets import QApplication , QMainWindow
+#导入ui的文件
+from firstMainWin import *
+
+#继承ui文件的父类，Ui_MainWindow和继承PyQt5的QMainWindow
+class MyMainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        super(MyMainWindow, self).__init__(parent)
+        self.setupUi(self)
+
+if __name__=="__main__":
+    app = QApplication(sys.argv)    #创建应用程序
+    myWin = MyMainWindow()          #窗口程序应用实例化
+    myWin.show()                    #显示窗口
+    sys.exit(app.exec_())           #循环显示
+
+ 11.通过采用一个方法来进行初始化
+class MyMainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super(myWin,self).__init__()
+        self.setupUi(self)
+        self.iniUI()        #可以用一个方法来进行其它初始化
+
+    #其它初始化
+    def iniUI(self):
+        self.helpSignal.connect(self.showHelpMessage)
+
+    def showHelpMessage()
+        self.resultLabel.setText(message)
+        self.statusBar().showMessage(message)
+
+12.如何设置复选框的默认选择
+        self.checkBox.setChecked(False)
+13.如何设置复选框与标签的显示或非显示
+        self.checkBox.clicked['bool'].connect(self.label.setVisible)
+14.如何设置复选框与文本框的是否可用
+        self.checkBox.clicked['bool'].connect(self.lineEdit.setEnabled)
+15.显示到lineEdit需要使用str转换
+
+16.如何显示和调用进度条——valueChanged
+
+        self.horizontalScrollBarSugarLevel.valueChanged.connect(self.scrollhorizontal)
+        self.verticalScrollBarPulseRate.valueChanged.connect(self.scrollhorizontal)
+        self.horizontalSliderBloodPressure.valueChanged.connect(self.scrollhorizontal)
+        self.verticalSliderCholestrolLevel.valueChanged.connect(self.scrollhorizontal)
+    def scrollhorizontal(self,value):
+        self.lineEditResult.setText("Sugar Level:"+str(value))
+
+17.如何解决pyqtgraph一闪而过
+pg.QtGui.QGuiApplication.exec_()
+
+18.如何高用QSS样式
+        qss_file=open('black_en.qss').read()
+        self.setStyleSheet(qss_file)``
