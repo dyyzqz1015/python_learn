@@ -90,7 +90,7 @@ $ {MONTH_NAME_FULL} - 一个月的全名。 示例：1月，2月等
 
 	In [3]: y=[]
 
-	In [4]: y=[n/5 for n in x]
+
 
 	In [5]: y
 	Out[5]: [1.0, 2.0, 3.0, 4.0, 5.0]
@@ -116,3 +116,12 @@ print(data.head(0))
 
 17.默认安装的界面设计器在哪位置
 C:\Users\asus\Anaconda3\Library\bin\designer.exe
+
+
+Using block-mode visual selection
+
+           Move to the first column in the first line you want to comment-out.
+                    #ress Ctrl-V to start block-mode selection.
+                    #Move down to select the first column of a block of lines.
+                    #Press I and then the desird comment starter (i.e. #)
+                    #ress ESC and the insertion will be applied to the whole block.
