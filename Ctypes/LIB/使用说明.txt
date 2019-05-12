@@ -1,0 +1,105 @@
+gcc add.c sub.c -fPIC -shared -o libbasic.so
+
+
+mkdir LIB
+cd LIB
+
+
+#####   add.c
+int add(int a,int b)
+{
+    return a+b;
+}
+
+#####   sub.c
+int sub(int a,int b)
+{
+    return a-b;
+}
+
+#####   basic.h
+int add(int a, int b);
+int sub(int a, int b);
+
+#####   demo.c
+
+#include<stdio.h>
+#include"basic.h"
+
+int main()
+{
+
+    printf("Addition:%d\n",add(3,4));
+    printf("sub:%d\n",sub(10,4));    
+    printf("This is  ok!\n");
+    return 0;
+}
+
+方法一
+gcc -fPIC -c add.c
+gcc -fPIC -c sub.c
+gcc -shared -o libbasic.so add.o sub.o
+
+gcc -c demo.c
+gcc -o demo demo.o libbasic.so
+
+方法二
+gcc add.c sub.c -fPIC -shared -o libbasic.so
+
+gcc -c demo.c
+gcc -o demo demo.o libbasic.so
+
+setp 4:
+qinzai@qz:~/LIB$ python3
+
+import ctypes
+lib=ctypes.CDLL("./libbasic.so")
+lib.add(3,4)
+
+
+例子2：
+
+1.源文件 
+####### getSum.c
+#include <stdio.h>
+ 
+int getSum()
+{
+    int sum = 0;
+    int a,b;
+    for(a=0;a<=100;a++)
+        {
+            sum += a;
+        }
+    return sum;
+}
+
+2.编译库
+gcc -shared -fPIC -DPIC getSum.c -o getSum.so
+
+
+3.python的ctypes调用
+
+# -*- coding: utf-8 -*-
+ 
+from ctypes import CDLL
+ 
+lib = CDLL("./getSum.so")
+print(lib.getSum())
+
+
+#####  char *input create_string_buffer(str.encode("starting string")
+
+void add_one_to_string(char *input) {
+    int ii = 0;
+    for (; ii < strlen(input); ii++) {
+        input[ii]++;
+    }
+}
+
+mutable_string = ctypes.create_string_buffer(str.encode("starting string"))
+libc.add_one_to_string(mutable_string)
+
+
+
+
