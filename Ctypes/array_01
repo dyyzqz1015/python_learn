@@ -43,3 +43,6 @@ print "A before doubling", A
 print "A's location in memory: %d"%A.ctypes.data
 doubleme(A.ctypes.data, len(A))
 print "A after doubling", A
+
+https://stackoverflow.com/questions/22582846/ctypes-structure-arrays-in-python
+结构体指针的例子
