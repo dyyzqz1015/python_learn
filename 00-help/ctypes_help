@@ -17,3 +17,12 @@ def my_test(a,b):
 df1["value"]=df1.apply(lambda df1:my_test(df1["A"],df1["B"]),axis=1)
 
 df1["value"]=df1.apply(lambda df1:complex(df1["A"],df1["B"]),axis=1)
+
+
+如何由b"COM"变成"COM是变量"
+port=b"COM"
+
+s="COM"
+port=bytes(s,encoding="utf-8")
+
+
