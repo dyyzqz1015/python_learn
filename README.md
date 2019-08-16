@@ -15,3 +15,20 @@ startFreq=10
 stopFreq=100
 points=10
 freq_points=np.linspace(startFreq,stopFreq,points)
+
+3.如何配置pycharm将QtDesigner的ui转换为.py
+
+File->Settings->Tools->External Tools
+1.配置QtDesigner
+点+，然后配置如下
+Name:QtDesigner
+Program:D:\Anaconda3\Library\bin\desagner.exe
+Parameters:
+Working directory:$FileDir$
+
+2.配置Qt uic
+Name:Qt uic
+Program:D:\Anaconda3\Scripts\pyuic5.exe
+Parameters:"FileName" -o $FileNameWithoutExtension$.py
+Working directory:$FileDir$
+
