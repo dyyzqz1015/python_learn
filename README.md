@@ -32,3 +32,9 @@ Program:D:\Anaconda3\Scripts\pyuic5.exe
 Parameters:"FileName" -o $FileNameWithoutExtension$.py
 Working directory:$FileDir$
 
+
+4.在QT当中显示和隐藏工具栏
+
+        self.toolbar = NavigationToolbar(self.canvas, self)
+        self.toolbar.hide()
+ 
