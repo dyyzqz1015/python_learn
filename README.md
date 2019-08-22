@@ -38,3 +38,18 @@ Working directory:$FileDir$
         self.toolbar = NavigationToolbar(self.canvas, self)
         self.toolbar.hide()
  
+5. skrf列子中找不到ring slot.s2p如何解决
+
+增加绝对路径
+
+lib_path=r"D:\Aanconda3_win32\Lib\site-packages\skrf\data"
+os.chdir(lib_path)
+
+ring_slot=rf.Network('ring slot.s2p')
+ring_slot.plot_s_smith()
+plt.show()
+
+
+
+
+
