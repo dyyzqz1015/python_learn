@@ -49,6 +49,7 @@ ring_slot=rf.Network('ring slot.s2p')
 ring_slot.plot_s_smith()
 plt.show()
 
+pi@raspberrypi:~ $ sudo apt-get install libqt5svg*
 
 
 
