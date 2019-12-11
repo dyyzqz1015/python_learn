@@ -52,5 +52,21 @@ plt.show()
 pi@raspberrypi:~ $ sudo apt-get install libqt5svg*
 
 
+6.如何将已经写好的界面添加到Tab当中
+1.先写好可用的界面及逻辑
+2.然后实例化
+3.将实例化的界面，传给TabWidget
+self.inter_preter=InterPreterConfig()
+hw=HardWareTest(interpreterUI=self.inter_preter)  #将界面实例化之后传给另一个界面，
+self.inter_preter.hw_test=hw    #将hw实例化后的界面传给inter_preter,并实例化为hw_test,而在使用时，只需要self.hw_test就得到hw
+所有的界面控件和方法
+
+tabWidget=QtabWidget()
+tabWidget.addTab(hw,"硬件测试")
+
+
+
+
+
 
 
